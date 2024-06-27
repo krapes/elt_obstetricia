@@ -1,0 +1,13 @@
+jaffle_shop: # this needs to match the profile in your dbt_project.yml file
+    target: dev
+    outputs:
+        dev:
+            type: bigquery
+            method: service-account
+            keyfile: /home/krapes/Documents/Projects/Lore/jaffle_shop/db_profiles/animated-verve-240319-8e7deed3633e.json # replace this with the full path to your keyfile
+            project: animated-verve-240319 # Replace this with your project id
+            dataset: dbtlore # Replace this with dbt_your_name, e.g. dbt_bilbo
+            threads: 1
+            timeout_seconds: 300
+            location: US
+            priority: interactive

@@ -1,0 +1,10 @@
+
+target/
+dbt_packages/
+logs/
+seeds/
+snapshots/
+
+db_profiles/animated-verve-240319-8e7deed3633e*
+.env
+
