@@ -20,9 +20,9 @@ SELECT
         WHEN migrante IS NOT NULL THEN TRUE
         ELSE FALSE
     END AS migrante,
-    LOWER("País origen") AS pais_origen,
+    `País origen` AS pais_origen,
     CASE
-        WHEN `pueblo originario` IS NOT NULL THEN `pueblo originario`
+        WHEN `pueblo originario` IS NOT NULL THEN TRUE
         ELSE NULL
     END AS pueblo_originario,
     CASE
@@ -47,6 +47,10 @@ SELECT
         WHEN EGRESO IS NOT NULL THEN TRUE
         ELSE FALSE
     END AS egreso,
+    CASE
+        WHEN `< 10` IS NOT NULL THEN `< 10`
+        ELSE NULL
+    END AS edad_minus_10,
     CASE
         WHEN `< 10` IS NOT NULL THEN '< 10'
         WHEN `10-14` IS NOT NULL THEN '10-14'

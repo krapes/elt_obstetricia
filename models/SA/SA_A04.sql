@@ -1,0 +1,44 @@
+SELECT
+
+COUNT(CASE WHEN edad_minus_10 <= 1 AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS E22,
+COUNT(CASE WHEN edad_minus_10 <= 1 AND gender = 'MUJER' THEN 1 ELSE NULL END) AS F22,
+COUNT(CASE WHEN edad_minus_10 >= 1 AND edad_minus_10 < 4 AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS G22,
+COUNT(CASE WHEN edad_minus_10 >= 1 AND edad_minus_10 < 4 AND gender = 'MUJER' THEN 1 ELSE NULL END) AS H22,
+COUNT(CASE WHEN edad_minus_10 >= 5 AND edad_minus_10 < 10 AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS I22,
+COUNT(CASE WHEN edad_minus_10 >= 5 AND edad_minus_10 < 10 AND gender = 'MUJER' THEN 1 ELSE NULL END) AS J22,
+
+COUNT(CASE WHEN edad = '10-14' AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS K22,
+COUNT(CASE WHEN edad = '10-14' AND gender = 'MUJER' THEN 1 ELSE NULL END) AS L22,
+COUNT(CASE WHEN edad = '15-19' AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS M22,
+COUNT(CASE WHEN edad = '15-19' AND gender = 'MUJER' THEN 1 ELSE NULL END) AS N22,
+COUNT(CASE WHEN edad = '20-24' AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS O22,
+COUNT(CASE WHEN edad = '20-24' AND gender = 'MUJER' THEN 1 ELSE NULL END) AS P22,
+COUNT(CASE WHEN edad = '25-29' AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS Q22,
+COUNT(CASE WHEN edad = '25-29' AND gender = 'MUJER' THEN 1 ELSE NULL END) AS R22,
+COUNT(CASE WHEN edad = '30-34' AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS S22,
+COUNT(CASE WHEN edad = '30-34' AND gender = 'MUJER' THEN 1 ELSE NULL END) AS T22,
+COUNT(CASE WHEN edad_35_plus >= 35 AND edad_35_plus < 40 AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS U22,
+COUNT(CASE WHEN edad_35_plus >= 35 AND edad_35_plus < 40 AND gender = 'MUJER' THEN 1 ELSE NULL END) AS V22,
+COUNT(CASE WHEN edad_35_plus >= 40 AND edad_35_plus < 45 AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS W22,
+COUNT(CASE WHEN edad_35_plus >= 40 AND edad_35_plus < 45 AND gender = 'MUJER' THEN 1 ELSE NULL END) AS X22,
+COUNT(CASE WHEN edad_35_plus >= 45 AND edad_35_plus < 50 AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS Y22,
+COUNT(CASE WHEN edad_35_plus >= 45 AND edad_35_plus < 50 AND gender = 'MUJER' THEN 1 ELSE NULL END) AS Z22,
+COUNT(CASE WHEN edad_35_plus >= 50 AND edad_35_plus < 55 AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS AA22,
+COUNT(CASE WHEN edad_35_plus >= 50 AND edad_35_plus < 55 AND gender = 'MUJER' THEN 1 ELSE NULL END) AS AB22,
+COUNT(CASE WHEN edad_35_plus >= 55 AND edad_35_plus < 60 AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS AC22,
+COUNT(CASE WHEN edad_35_plus >= 55 AND edad_35_plus < 60 AND gender = 'MUJER' THEN 1 ELSE NULL END) AS AD22,
+COUNT(CASE WHEN edad_35_plus >= 60 AND edad_35_plus < 65 AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS AE22,
+COUNT(CASE WHEN edad_35_plus >= 60 AND edad_35_plus < 65 AND gender = 'MUJER' THEN 1 ELSE NULL END) AS AF22,
+COUNT(CASE WHEN edad_35_plus >= 65 AND edad_35_plus < 70 AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS AG22,
+COUNT(CASE WHEN edad_35_plus >= 65 AND edad_35_plus < 70 AND gender = 'MUJER' THEN 1 ELSE NULL END) AS AH22,
+COUNT(CASE WHEN edad_35_plus >= 70 AND edad_35_plus < 75 AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS AI22,
+COUNT(CASE WHEN edad_35_plus >= 70 AND edad_35_plus < 75 AND gender = 'MUJER' THEN 1 ELSE NULL END) AS AJ22,
+COUNT(CASE WHEN edad_35_plus >= 75 AND edad_35_plus < 80 AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS AK22,
+COUNT(CASE WHEN edad_35_plus >= 75 AND edad_35_plus < 80 AND gender = 'MUJER' THEN 1 ELSE NULL END) AS AL22,
+COUNT(CASE WHEN edad_35_plus >= 80 AND gender = 'HOMBRE' THEN 1 ELSE NULL END) AS AM22,
+COUNT(CASE WHEN edad_35_plus >= 80 AND gender = 'MUJER' THEN 1 ELSE NULL END) AS AN22,
+/**/
+SUM(CASE WHEN pueblo_originario IS TRUE THEN 1 ELSE 0 END) AS AO22, /*Pueblos Originarios*/
+SUM(CASE WHEN migrante IS TRUE THEN 1 ELSE 0 END) AS AP22 /*Migrantes*/
+
+FROM {{ ref('stg_unacess_medico_edf') }}
